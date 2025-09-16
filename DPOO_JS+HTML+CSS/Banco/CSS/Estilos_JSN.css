@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    background: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    width: 400px;
+  }
+  
+  h2, h3 {
+    text-align: center;
+    color: #2a75bb;
+  }
+  
+  input, select, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+  
+  button {
+    background: #2a75bb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
