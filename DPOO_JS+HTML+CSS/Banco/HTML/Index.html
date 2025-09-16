@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Bancario - Empleados</title>
+    <link rel="stylesheet" href="../CSS/Estilos_JSN.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Gestión de Empleados</h2>
+        <form id="empleadoForm">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="number" id="edad" placeholder="Edad" required>
+            <select id="contrato" required>
+                <option value="">Tipo de Contrato</option>
+                <option value="Término fijo">Término fijo</option>
+                <option value="Término indefinido">Término indefinido</option>
+            </select>
+            <input type="number" id="saldoInicial" placeholder="Saldo inicial" required>
+            <button type="submit">Registrar Empleado</button>
+        </form>
+
+        <h3>Lista de Empleados</h3>
+        <ul id="listaEmpleados"></ul>
+    </div>
+
+    <script src="../JavaScript/bank account.js"></script>
+</body>
+</html>
+
+
