@@ -1,0 +1,117 @@
+La empresa NovaSystems S.A.S. enfrenta una situación crítica con su sistema de gestión de usuarios. El proyecto forma parte de una iniciativa de transformación digital que busca integrar:
+
+Interfaz web moderna (Bootstrap y Tailwind)
+API REST (Fast API)
+Persistencia de datos (SQLModel)
+Sin embargo, el desarrollador encargado abandonó el proyecto dejando:
+
+Código incompleto
+Errores en la definición de endpoints
+Uso incorrecto de frameworks de estilos
+Modelo de datos mal estructurado
+Operaciones de base de datos inconsistentes
+El sistema actualmente no puede ser desplegado en producción.
+
+La dirección técnica le asigna a usted la responsabilidad de:
+
+Recuperar el sistema
+Corregir errores
+Completar funcionalidades mínimas
+Justificar técnicamente las decisiones tomadas
+Revisen el código entregado, con base en el deben:
+
+Corregir y completar todas las secciones (Frontend, Backend y Base de Datos)
+Garantizar que el sistema sea funcional y coherente
+Al finalizar, redactar un breve análisis técnico donde justifique las correcciones realizadas
+Se permite el uso de apuntes físicos y subir archivos de .txt, no se permite uso de internet, celulares, ni IA. Puedo cancelar el examen con nota 0 si veo probabilidad de uso o si los encuentro usando alguna de las herramientas prohibidas.
+-------------HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gestión de Usuarios</title>
+
+<!-- Falta integración -->
+</head>
+<body>
+
+<div class="container">
+
+<div class="______">
+<div class="col-6">Lista de Usuarios</div>
+<div class="col-6">Acciones</div>
+</div>
+
+<button class="btn ______ ______">Crear Usuario</button>
+
+<button class="bg-blue-500 ______ px-4 py-2 rounded">
+Botón Tailwind
+</button>
+
+<div class="bg-red">
+Mensaje de error
+</div>
+
+</div>
+
+</body>
+</html>
+
+-----------------Backend
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@.____("/usuarios")
+def listar_usuarios():
+return "usuario1", "usuario2"
+
+
+@app.get("/usuarios/______")
+def obtener_usuario(nombre: str):
+return {"mensaje": f"Hola {nombre}"}
+
+
+@app.get("/crear")
+def crear_usuario():
+return {"mensaje": "Usuario creado"}
+
+-----SQL Model
+
+from sqlmodel import ______, Field
+
+class Usuario(______, table=______):
+id: int | None = Field(default=None, ______)
+nombre: ______
+email: ______
+edad: ______
+
+------------------------------Operador
+
+from sqlmodel import Session
+
+@app.post("/usuarios")
+def crear(usuario: Usuario, session: Session):
+session.__________(usuario)
+session.__________()
+session.__________(usuario)
+return usuario
+
+
+@app.get("/usuarios/{id}")
+def obtener(id: int, session: Session):
+usuario = session.__________(Usuario, id)
+if not usuario:
+raise __________(status_code=____, detail="No encontrado")
+return usuario
+
+___________________________________________________________-
+
+Redacte un análisis breve (máximo 10 líneas) donde explique:
+
+Qué errores críticos encontró en el sistema
+Qué decisiones tomó para corregirlos
+Cómo se relacionan Bootstrap, Tailwind, FastAPI y SQLModel dentro de la solución
+Por qué los métodos HTTP utilizados son los correctos
+Cómo corrigió la identación.
