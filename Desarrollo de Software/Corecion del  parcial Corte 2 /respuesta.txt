@@ -1,0 +1,83 @@
+Errores vitales en el bakend es los múltiples fallos en la selección en los métodos HTTP donde no eran otros la falta de atributos en la parte de creación de usuario y la no importación para la creación del archivo JSON
+
+
+
+
+acontinuacion estan los archivos creados y adjuntos como respuesta para el parcial
+
+Los problemas del Index es que hay un conflicto entre los CSS además sin definición los botones no están creados correctamente falta un lugar donde se pueda insertar la edad nombres etc.
+
+Frontend.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gestión de Usuarios</title>
+<srips> Botón Tailwind </srips> // seleccionamos solo uno de los CSS para evitar sobrecargar la aplicación junto a la evitar errores dentro de diseño dentro también toca plantear un espacio para poner texto e input pero no no logro recordar nada de eso
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-12 md-2">
+<div class="col-6 md-5">Lista de Usuarios</div>
+<div class="col-6 md-5">Acciones</div>
+</div>
+
+<button class="btn ______ ______">Crear Usuario</button>
+
+<button class="bg-blue-500 ______ px-4 py-2 rounded">
+Botón Tailwind
+</button>
+
+<div class="bg-denge">
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+bakend.py
+from fastapi import FastAPI
+app = FastAPI()
+@usuarios.get("/usuarios") // Se selecciona método GET obtener el listado de
+usuarios de la base de datos
+def listar_usuarios(usuarios: str):
+return ["usuarios"{"usuario1", "usuario2",...}]
+@app.get("/usuarios/{nombre}")// Al igual que con el anterior solo vamos leer la
+entrada de un dato el cual se uslizara para saludar al usuario
+def obtener_usuario(nombre: str):
+return {"mensaje": f"Hola {nombre}"}
+@app.put("/crear")// En este caso tenemos que remplazar el método HTTP de GET a
+un PUT además de añadirle los atributos para la creación del usuario
+def crear_usuario():
+nombre=nombre
+email=email
+edad=edad
+return {"mensaje": "Usuario creado"}
+// Aquí se crea el archivo JSON para subirlo en base de datos id
+from sqlmodel import Usuarios.json, Field
+class Usuarios(usuario, table=usuarios):
+id: int | None = Field(default=None, id++)
+nombre: get.crear{nombre}
+email: get.crear{email}
+edad: get.crear{edad}
+
+operador.py
+from sqlmodel import Session
+@app.post("/usuarios") // rellenado lo vacíos con los faltantes obtenidos y
+enviemos a usuario el estado de la secesión usuario siendo una clase añadida
+def crear(usuario: Usuario, session: Session):
+session.get(usuario)
+session.get(Session)
+session.put(usuario)
+return usuario
+@app.get("/usuarios/{id}")
+def obtener(id: int, session: Session):
+usuario = session.put(Usuario, id)
+if not usuario:
+raise Usuario(status_code=id, detail="No encontrado")
+return usuario
+

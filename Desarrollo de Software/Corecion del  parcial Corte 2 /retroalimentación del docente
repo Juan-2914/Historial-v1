@@ -1,0 +1,8 @@
+Comentario:
+Juan, tienes un buen instinto para la arquitectura: identificar que mezclar Bootstrap y Tailwind genera conflictos es un análisis correcto. También tienes claro que al sistema le faltan componentes de entrada de datos (inputs).
+Sin embargo, la parte técnica es muy débil:
+Sintaxis de Python: Python no reconoce id++. Para modelos, debes definir tipos claros (nombre: str). Además, no puedes importar archivos .json dentro del código de esa manera.
+Protocolos HTTP: Usaste PUT para crear, pero el estándar para registros nuevos es POST.
+Manejo de Base de Datos: Los comandos para guardar son session.add() y session.commit(). Usar put o get para insertar datos no funcionará.
+Manejo de Errores: El servidor necesita HTTPException para comunicarse con el cliente; usar la clase Usuario para lanzar un error detendrá el programa.
+Te recomiendo practicar la escritura de código base y repasar la estructura de clases en Python
